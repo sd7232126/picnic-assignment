@@ -15,3 +15,8 @@ package.xml
 force-app/main/default/profiles/Custom%3A Sales Profile
 force-app/main/default/profiles/Custom%3A Marketing Profile
 force-app/main/default/profiles/Custom%3A Support Profile
+
+# Ignore AppBrand app
+force-app/main/default/appMenus/*
+force-app/main/default/applications/AppBrand
+force-app/main/default/flexipages/AppBrand_UtilityBar
