@@ -10,3 +10,8 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Custom profiles created by org creation
+force-app/main/default/profiles/Custom%3A Sales Profile
+force-app/main/default/profiles/Custom%3A Marketing Profile
+force-app/main/default/profiles/Custom%3A Support Profile
