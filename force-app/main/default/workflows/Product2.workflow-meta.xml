@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Inform_Price_Sensitivity_Email_Alert</fullName>
+        <ccEmails>jiedong.ding@gmail.com</ccEmails>
+        <description>Inform Price Sensitivity Email Alert</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Inform_Price_Sensitivity_Email_Template</template>
+    </alerts>
+    <rules>
+        <fullName>Inform Price Sensitivity</fullName>
+        <actions>
+            <name>Inform_Price_Sensitivity_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Inform price sensitivity when product selling price fluctuates too much</description>
+        <formula>AND(
+  NOT(OR(
+    $Setup.Bypass_Settings__c.Product_WF__c,
+    $Setup.Bypass_Settings__c.Product_WF_Inform_Price_Sensitivity__c
+  )),
+  ISCHANGED(Selling_Price__c),
+  ABS(Selling_Price__c - Selling_Price_Before__c)/Selling_Price__c &gt; 0.1
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>
