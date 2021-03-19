@@ -20,3 +20,5 @@ force-app/main/default/profiles/Custom%3A Support Profile
 force-app/main/default/appMenus/*
 force-app/main/default/applications/AppBrand
 force-app/main/default/flexipages/AppBrand_UtilityBar
+
+force-app/main/default/objectTranslations/*

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_If_Purchasing_Price_Over_5</fullName>
+    <active>true</active>
+    <description>Cannot edit the staging product if purchasing price is greater than 5 euro</description>
+    <errorConditionFormula>AND(
+  NOT(OR(
+    $Setup.Bypass_Settings__c.SProduct_VR__c,
+    $Setup.Bypass_Settings__c.SProduct_VR_Cannot_Edit_PP_Over_5__c
+  )),
+  OR(PRIORVALUE(Purchasing_Price__c) &gt;= 5, Purchasing_Price__c &gt;= 5)
+)</errorConditionFormula>
+    <errorMessage>Cannot edit staging product if purchasing price is over 5 euro.</errorMessage>
+</ValidationRule>

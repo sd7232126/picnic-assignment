@@ -5,6 +5,7 @@
     <columns>GTIN__c</columns>
     <columns>Purchasing_Price__c</columns>
     <columns>Selling_Price__c</columns>
+    <columns>Selling_Price_Before__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>
