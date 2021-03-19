@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SProduct_Trigger_Propagate_SP__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>SProduct - Trigger - Propagate SP</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

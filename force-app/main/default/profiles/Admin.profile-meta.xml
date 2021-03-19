@@ -5,6 +5,14 @@
         <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>StagingProductTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>StagingProductTriggerHandler_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
@@ -14,6 +22,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Purchasing_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Product2.Selling_Price_Before__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
