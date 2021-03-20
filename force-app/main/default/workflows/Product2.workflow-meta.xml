@@ -22,7 +22,7 @@
     $Setup.Bypass_Settings__c.Product_WF_Inform_Price_Sensitivity__c
   )),
   ISCHANGED(Selling_Price__c),
-  ABS(Selling_Price__c - Selling_Price_Before__c)/Selling_Price__c &gt; 0.1
+  ABS(PRIORVALUE(Selling_Price__c) - Selling_Price__c) / Selling_Price__c &gt; 0.1
 )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
