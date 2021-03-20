@@ -10,6 +10,7 @@ public with sharing class ProductTriggerHandler {
                 p.Selling_Price_Before__c = oldProductsMap.get(p.Id).Selling_Price__c;
             }
         }
+        // TODO: Send notifications from here, not using new field as per the requirements
 
     }
 

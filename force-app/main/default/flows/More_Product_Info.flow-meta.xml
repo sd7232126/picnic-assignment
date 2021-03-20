@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <description>Show more product info screen</description>
+    <formulas>
+        <name>Product_Margin</name>
+        <dataType>Currency</dataType>
+        <expression>{!Get_Current_Product.Selling_Price__c} - {!Get_Current_Product.Purchasing_Price__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Product_Margin_Percentage</name>
+        <dataType>String</dataType>
+        <expression>TEXT(ROUND({!Product_Margin} / {!Get_Current_Product.Purchasing_Price__c} * 100, 2)) + &quot;%&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>Staging_Product_Age</name>
+        <dataType>Number</dataType>
+        <expression>TODAY() - DATEVALUE({!Get_Staging_Product.LastModifiedDate})</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>More Product Info {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>More Product Info</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Current_Product</name>
+        <label>Get Current Product</label>
+        <locationX>176</locationX>
+        <locationY>209</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Staging_Product</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Product2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Staging_Product</name>
+        <label>Get Staging Product</label>
+        <locationX>176</locationX>
+        <locationY>374</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>More_Product_Info_Screen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GTIN__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Current_Product.GTIN__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Staging_Product__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <description>More product info screen</description>
+        <name>More_Product_Info_Screen</name>
+        <label>More Product Info Screen</label>
+        <locationX>176</locationX>
+        <locationY>551</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Product_Information_Title</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Product Information&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Product_Information</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Name: &lt;/span&gt;{!Get_Current_Product.Name}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;GTIN: &lt;/span&gt;{!Get_Current_Product.GTIN__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Prices_Margin_Title</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Prices &amp;amp; Martin&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Prices_Margin</name>
+            <fieldText>&lt;p&gt;Purchasing Price: €{!Get_Current_Product.Purchasing_Price__c}&lt;/p&gt;&lt;p&gt;Selling Price: €{!Get_Current_Product.Selling_Price__c}&lt;/p&gt;&lt;p&gt;Margin: {!Product_Margin} ({!Product_Margin_Percentage})&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Staging_Product_Information_Title</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Staging Product Information&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Staging_Product_Information</name>
+            <fieldText>&lt;p&gt;Name: {!Get_Staging_Product.Name}&lt;/p&gt;&lt;p&gt;GTIN: {!Get_Staging_Product.GTIN__c}&lt;/p&gt;&lt;p&gt;Age (in days): {!Staging_Product_Age}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Current_Product</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
