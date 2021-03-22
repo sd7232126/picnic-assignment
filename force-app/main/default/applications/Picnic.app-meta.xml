@@ -14,6 +14,7 @@
     <label>Picnic</label>
     <navType>Standard</navType>
     <tabs>standard-Product2</tabs>
+    <tabs>Staging_Product__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Picnic_UtilityBar</utilityBar>
 </CustomApplication>
