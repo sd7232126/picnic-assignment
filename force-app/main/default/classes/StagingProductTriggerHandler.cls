@@ -17,8 +17,8 @@ public with sharing class StagingProductTriggerHandler {
         }
         try {
             Database.upsert(productsToUpsert, Product2.GTIN__c);
-        } catch (DMLException e) {
-            // Error Handling Options
+        } catch (DmlException e) {
+            // Todo: Options of Error Handling
             // Save logs to custom log object
             // Use SaveResult if partial success
             // Send notifications
