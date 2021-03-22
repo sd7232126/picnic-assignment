@@ -2,7 +2,6 @@ Product Selling Price Changed Over 10%
 
 Product Name: {!Product2.Name}
 Product GTIN: {!Product2.GTIN__c}
-Selling Price Before: {!Product2.Selling_Price_Before__c}
-Selling Price Now: {!Product2.Selling_Price__c}
+Selling Price: {!Product2.Selling_Price__c}
 
 URL to the Product: {!Product2.Link}
