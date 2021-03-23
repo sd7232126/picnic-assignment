@@ -17,6 +17,7 @@ This is a Salesforce DX package which contains the automated solution for Produc
 - Should Staging Products overwrite manual price changes made by the users on Product object?
 - Delete and undelete staging product?
 - Mass updates with price sensitivity?
+- Staging Product updated without any changes, age field might become inaccurate.
 - Data Modelling
   - Will GTIN ever longer than 13 digits?
   - Will Product Name ever longer than 80 characters?
@@ -30,6 +31,7 @@ This is a Salesforce DX package which contains the automated solution for Produc
 - Better code coverage on Staging Product Trigger
 - Better Page Layout Design
 - Include Test Data Import/Export in DX Package
+- If price sensitivity is frequent, add a new field storing previous selling price used for reporting
 
 ## Developer Sandbox
 
