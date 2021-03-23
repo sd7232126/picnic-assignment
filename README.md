@@ -27,6 +27,7 @@ This is a Salesforce DX package which contains the automated solution for Produc
 - Test Data Factory and Helper Functions
 - Better code coverage on Staging Product Trigger
 - Better Page Layout Design
+- Include Test Data Import/Export in DX Package
 
 ## Developer Sandbox
 
