@@ -30,7 +30,7 @@ This is a Salesforce DX package which contains the automated solution for Produc
 
 ## Developer Sandbox
 
-Org URL: [picnic-jiedong-dev-ed.my.salesforce.com](picnic-jiedong-dev-ed.my.salesforce.com)  
+Org URL: [https://picnic-jiedong-dev-ed.my.salesforce.com](https://picnic-jiedong-dev-ed.my.salesforce.com)  
 Org ID: 00D09000007Sh6u  
 Org User | Username | Email
 ------------ | ------------- | -------------
