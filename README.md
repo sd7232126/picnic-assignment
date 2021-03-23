@@ -1,18 +1,38 @@
-# Salesforce DX Project: Next Steps
+# Picnic Assignment - Product Propagation
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This is a Salesforce DX package which contains the automated solution for Product Propagation in Picnic Assignment.
 
-## How Do You Plan to Deploy Your Changes?
+## Package Components
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+- Custom object `Staging Product`, and custom fields on `Product` and `Staging Product` objects
+- Custom Application `Picnic` with two tabs (Product, Staging Product)
+- Apex Trigger and Trigger Handler on `Staging Product` object
+- Custom Setting `Bypass Settings`
+- Validation Rule `Cannot_Edit_If_Purchasing_Price_Over_5` on Staging Product object
+- Workflow Rule `Inform Price Sensitivity` on Product object
+- Screen Flow `More Product Info` and quick action `Show more product info` on Product object
 
-## Configure Your Salesforce DX Project
+## Considerations
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- Should Staging Products overwrite manual price changes made by the users on Product object?
+- Data Modelling
+  - Will GTIN ever longer than 13 digits?
+  - Will Product Name ever longer than 80 characters?
+  - Should enable multiple currencies?
 
-## Read All About It
+## Improvements
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+- Custom Label for Localisation
+- Better Error Handling, DML Result Handling and Logging (both Trigger and Flow)
+- Test Data Factory and Helper Functions
+- Better code coverage on Staging Product Trigger
+- Better Page Layout Design
+
+## Developer Sandbox
+
+Org URL: [picnic-jiedong-dev-ed.my.salesforce.com](picnic-jiedong-dev-ed.my.salesforce.com)  
+Org ID: 00D09000007Sh6u  
+Org User | Username | Email
+------------ | ------------- | -------------
+Commercial Director (Jiedong) | jiedong.ding@gmail.com.picnic | jiedong.ding@gmail.com
+System Admin (Picnic) | system.admin@gmail.com.picnic | sfrecruitment@teampicnic.com
