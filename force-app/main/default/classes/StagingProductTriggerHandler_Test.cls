@@ -9,7 +9,8 @@ private class StagingProductTriggerHandler_Test {
     @testSetup
     static void testSetup() {
         // Create admin user and commercial director users
-        Profile sysAdminProfile = [SELECT Id FROM Profile WHERE Name = 'System Administrator'];
+        // Todo: No DeveloperName column on Profile object
+        Profile sysAdminProfile = [SELECT Id FROM Profile WHERE Name = 'System Administrator' OR Name = 'Systeembeheerder'];
         List<User> users = new List<User>();
         User sysAdmin = new User(   Alias = 'sysadmin', EmailEncodingKey = 'UTF-8', LanguageLocaleKey = 'en_US',
                                     TimeZoneSidKey = 'Europe/Amsterdam', LocaleSidKey = 'nl_NL',

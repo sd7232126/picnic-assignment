@@ -6,7 +6,7 @@
         <description>Inform Price Sensitivity Email Alert</description>
         <protected>false</protected>
         <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Inform_Price_Sensitivity_Email_Template</template>
+        <template>Picnic/Inform_Price_Sensitivity_Email_Template</template>
     </alerts>
     <rules>
         <fullName>Inform Price Sensitivity</fullName>

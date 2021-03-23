@@ -1,11 +1,21 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "Picnic",
+            "versionName": "Version 1.0",
+            "versionNumber": "1.0.0.NEXT"
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "51.0",
+    "packageAliases": {
+        "Picnic": "0Ho090000008ONUCA2",
+        "Picnic@1.0.0-1": "04t09000000mOzjAAE",
+        "Picnic@1.0.0-2": "04t09000000mOzoAAE",
+        "Picnic@1.0.0-3": "04t09000000mOztAAE",
+        "Picnic@1.0.0-4": "04t09000000mP46AAE"
     }
-  ],
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "51.0"
 }
