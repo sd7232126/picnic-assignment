@@ -15,6 +15,8 @@ This is a Salesforce DX package which contains the automated solution for Produc
 ## Considerations
 
 - Should Staging Products overwrite manual price changes made by the users on Product object?
+- Delete and undelete staging product?
+- Mass updates with price sensitivity?
 - Data Modelling
   - Will GTIN ever longer than 13 digits?
   - Will Product Name ever longer than 80 characters?
