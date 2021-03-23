@@ -32,6 +32,7 @@ This is a Salesforce DX package which contains the automated solution for Produc
 - Better Page Layout Design
 - Include Test Data Import/Export in DX Package
 - If price sensitivity is frequent, add a new field storing previous selling price used for reporting
+- Set up CI for package development model from one of the [Sample CI Repos](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ci_package_dev.htm)
 
 ## Developer Sandbox
 
