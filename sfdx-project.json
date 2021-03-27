@@ -5,7 +5,7 @@
             "default": true,
             "package": "Picnic",
             "versionName": "Version 1.0",
-            "versionNumber": "1.0.0.NEXT"
+            "versionNumber": "1.0.1.NEXT"
         }
     ],
     "namespace": "",
@@ -16,6 +16,8 @@
         "Picnic@1.0.0-1": "04t09000000mOzjAAE",
         "Picnic@1.0.0-2": "04t09000000mOzoAAE",
         "Picnic@1.0.0-3": "04t09000000mOztAAE",
-        "Picnic@1.0.0-4": "04t09000000mP46AAE"
+        "Picnic@1.0.0-4": "04t09000000mP46AAE",
+        "Picnic@1.0.0-5": "04t09000000mQe8AAE",
+        "Picnic@1.0.1-1": "04t09000000mQeDAAU"
     }
 }
